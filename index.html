@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Estos son los "traductores" reales, ahora sí con la dirección completa -->
+    <script src="eventemitter2.min.js"></script>
+    <script src="roslib.min.js"></script>
+    <style>
+        body { text-align: center; font-family: Arial; background: #1a1a1a; color: white; padding-top: 50px; }
+        .btn { width: 250px; height: 100px; font-size: 30px; margin: 20px; border-radius: 15px; border: none; cursor: pointer; }
+        .on { background-color: #2ecc71; }
+        .off { background-color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <h1>🚀 CONTROL FARAÓN 2008</h1>
+    <button class="btn on" onclick="enviar('on')">ENCENDER 💡</button><br>
+    <button class="btn off" onclick="enviar('off')">APAGAR 💤</button>
+
+    <script>
+     // 1. Conexión limpia
+     var ros = new ROSLIB.Ros({
+        url : 'ws://192.168.153.187:9090'
+     });
+
+     // 2. Definición del canal
+     var topic = new ROSLIB.Topic({
+        ros : ros,
+        name : '/comando_luz',
+        messageType : 'std_msgs/String'
+     });
+
+     // 3. Función de envío
+     function enviar(estado) {
+        var msg = new ROSLIB.Message({ data: estado });
+        topic.publish(msg);
+        console.log("Enviando a ROS: " + estado);
+        alert("Orden enviada: " + estado);
+     }
+    </script>
+</body>
+</html>

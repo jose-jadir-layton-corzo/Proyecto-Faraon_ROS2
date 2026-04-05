@@ -1,14 +1,22 @@
-# 🏺 Proyecto Faraón: IoT & ROS 2 en Hardware Legacy
+# 🏺 Proyecto Faraón: Industrial IoT & ROS 2 on Legacy Hardware
 
-Este proyecto demuestra la implementación de un sistema de control de potencia y telemetría industrial utilizando **ROS 2 Humble** y **Docker** sobre una PC de 2008 (2.6 GB RAM).
+This project demonstrates the implementation of a **Sistemas de Sistemas (SoS)** architecture using ROS 2 Humble and Docker on a 2008 PC (2.6 GB RAM).
 
-## 🚀 Características Técnicas
-- **Control de Potencia:** Integración de Arduino Mini con etapa de potencia AC (TRIAC/MOC).
-- **Arquitectura:** Despliegue de nodos en contenedores Docker para optimización de recursos.
-- **Conectividad:** Telemetría global vía WebSockets y túneles seguros con Ngrok.
-- **Visión Artificial:** Streaming de video MJPEG optimizado con OpenCV.
+## 🚀 Engineering Milestones
+*   **Resource Optimization:** Successfully deployed ROS 2 Humble on legacy hardware with critical memory constraints.
+*   **Asynchronous Control:** Implemented a Multithreaded Python Server (`ThreadingMixIn`) to handle real-time MJPEG video and serial commands simultaneously.
+*   **Global Connectivity:** Secure HTTPS tunneling via **Ngrok** with an asynchronous Fetch API frontend to eliminate UI latency.
+*   **Power Electronics:** Direct AC power control via Arduino Mini + TRIAC/MOC stage.
 
-## 🛠️ Stack Tecnológico
-- Python 3 / ROS 2 Humble / C++ (Arduino)
-- Debian 12 (Host) / Docker
-- JavaScript (Roslib.js para interfaz web)
+## 🛠️ Tech Stack
+*   **Middleware:** ROS 2 Humble (Dockerized).
+*   **Backend:** Python 3 (Threading, Serial, HTTP).
+*   **Hardware:** Arduino Mini, Webcam Cubeternet, PC 2008 (Debian 12).
+*   **Networking:** WebSockets, Ngrok, Fetch API.
+
+## 📈 Future Roadmap
+*   Integration of **Zenoh** for ultra-low latency interoperability.
+*   Hardware-in-the-Loop (HIL) simulation for industrial fleet orchestration.
+
+---
+*Developed by Jose Jadir Layton Corzo - 2026*
